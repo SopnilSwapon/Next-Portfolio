@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { Menu, X, Code2, ExternalLink } from 'lucide-react';
 
 
@@ -31,7 +31,7 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
-  const logoVariants = {
+  const logoVariants: Variants = {
     initial: { opacity: 0, x: -20 },
     animate: { 
       opacity: 1, 
@@ -40,7 +40,7 @@ const Navbar = () => {
     },
   };
 
-  const navItemVariants = {
+  const navItemVariants: Variants = {
     initial: { opacity: 0, y: -10 },
     animate: (i: number) => ({
       opacity: 1,
@@ -57,7 +57,7 @@ const Navbar = () => {
     }
   };
 
-  const mobileMenuVariants = {
+  const mobileMenuVariants: Variants= {
     closed: {
       opacity: 0,
       x: "100%",
@@ -91,7 +91,7 @@ const Navbar = () => {
     }
   };
 
-  const mobileItemVariants = {
+  const mobileItemVariants: Variants = {
     open: {
       opacity: 1,
       y: 0,
@@ -153,7 +153,7 @@ const Navbar = () => {
             <Link href="/" className="group">
               <motion.div className="flex flex-col">
                 <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-                  John Dev
+                  Sapon Dev
                 </span>
                 <motion.div
                   className="h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 origin-left"
