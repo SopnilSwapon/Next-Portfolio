@@ -8,7 +8,7 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center gap-4">
         <Navbar/>
         <SkillsSection/>
-        {/* <Banner/> */}
+        <Banner/>
         <h1 className="text-3xl mt-20 font-bold">Welcome to My Next Portfolio!</h1>
       </div>
     </div>
