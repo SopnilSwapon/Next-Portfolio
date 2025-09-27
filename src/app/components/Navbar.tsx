@@ -115,15 +115,11 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 px-4 py-4"
+      className="fixed bg-white top-0 z-50 left-0 right-0 z-50 px-4 py-4"
     >
       <nav
         className={`
           relative max-w-7xl mx-auto rounded-2xl transition-all duration-500 ease-out
-          ${scrolled 
-            ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg shadow-black/5 border border-gray-200/20 dark:border-gray-700/20' 
-            : 'bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm border border-gray-200/10 dark:border-gray-700/10'
-          }
         `}
         role="navigation"
         aria-label="Main navigation"
@@ -152,7 +148,7 @@ const Navbar = () => {
             </motion.div>
             <Link href="/" className="group">
               <motion.div className="flex flex-col">
-                <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
+                <span className="text-xl font-bold text-black">
                   Sapon Dev
                 </span>
                 <motion.div
@@ -179,7 +175,7 @@ const Navbar = () => {
               >
                 <Link
                   href={item.href}
-                  className="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 font-medium transition-colors duration-200 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  className="px-4 py-2 rounded-lg text-black font-medium transition-colors duration-200 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
                   aria-label={`Navigate to ${item.name} section`}
                 >
                   {item.name}
