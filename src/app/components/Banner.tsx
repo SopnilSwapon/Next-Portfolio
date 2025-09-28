@@ -1,8 +1,8 @@
-'use client';
-
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
-import { ChevronDown, Code, Palette, Zap } from 'lucide-react';
+"use client";
+import React from "react";
+import { motion, Variants } from "framer-motion";
+import { Code } from "lucide-react";
+import Image from "next/image";
 
 const Banner: React.FC = () => {
   const containerVariants = {
@@ -11,38 +11,42 @@ const Banner: React.FC = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
-  const itemVariants : Variants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
-  const floatingVariants : Variants = {
-    animate: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
-  const skills = ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'];
+  const skills = [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+  ];
 
   return (
-    <section className="relative min-h-screen mt-[1000px]">
+    <section className="relative min-h-screen">
+      <div className="absolute left-[calc(50%-11rem)] mt-16 h-[30rem] w-[22rem] overflow-hidden rounded-t-full pt-6 bg-gradient-to-b from-[var(--color-primary)] to-transparent">
+        <Image
+          src="https://z-p3-scontent.fdac12-1.fna.fbcdn.net/v/t39.30808-6/480445048_1923715631492143_3577327119025195517_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=n9wSBijAL_kQ7kNvwFRz3EB&_nc_oc=AdmmnZh7sJZ1yPaKBzIvsJGTeljd1RYyjMeXC8-JeNACuaJtJLMAXnl0vXITVqSDZrs&_nc_zt=23&_nc_ht=z-p3-scontent.fdac12-1.fna&_nc_gid=hlKZ1xLTnT8tWblUoiXHEw&oh=00_AfZTCbEvQrGyP39b_s7jexmUOTmbewH8yPJ6osY0ICEycA&oe=68DEB01A"
+          alt="my-photo"
+          width={400}
+          height={400}
+        />
+      </div>
+
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <motion.div
@@ -54,7 +58,7 @@ const Banner: React.FC = () => {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
         <motion.div
@@ -67,7 +71,7 @@ const Banner: React.FC = () => {
             duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 2
+            delay: 2,
           }}
         />
       </div>
@@ -89,7 +93,7 @@ const Banner: React.FC = () => {
           </motion.div>
 
           {/* Main heading */}
-          <motion.h1 
+          <motion.h1
             variants={itemVariants}
             className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent leading-tight"
           >
@@ -101,16 +105,17 @@ const Banner: React.FC = () => {
           </motion.h1>
 
           {/* Description */}
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Crafting exceptional digital experiences with modern web technologies. 
-            Currently building innovative solutions at a software company since July 2024.
+            Crafting exceptional digital experiences with modern web
+            technologies. Currently building innovative solutions at a software
+            company since July 2024.
           </motion.p>
 
           {/* Skills badges */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="flex flex-wrap justify-center gap-4 mb-12"
           >
@@ -129,7 +134,7 @@ const Banner: React.FC = () => {
           </motion.div>
 
           {/* CTA Buttons */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
           >
@@ -143,54 +148,9 @@ const Banner: React.FC = () => {
                 <Code className="w-5 h-5 group-hover:rotate-12 transition-transform" />
               </span>
             </motion.button>
-            
-            <motion.button
-              className="group px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-xl font-semibold text-lg border border-white/20 hover:bg-white/20 transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="flex items-center gap-2">
-                Get In Touch
-                <Zap className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-              </span>
-            </motion.button>
-          </motion.div>
-
-          {/* Floating icons */}
-          <div className="absolute top-1/4 left-10 hidden lg:block">
-            <motion.div variants={floatingVariants} animate="animate">
-              <Code className="w-8 h-8 text-purple-400 opacity-60" />
-            </motion.div>
-          </div>
-          
-          <div className="absolute top-1/3 right-16 hidden lg:block">
-            <motion.div 
-              variants={floatingVariants} 
-              animate="animate"
-              transition={{ delay: 2 }}
-            >
-              <Palette className="w-10 h-10 text-blue-400 opacity-60" />
-            </motion.div>
-          </div>
-
-          {/* Scroll indicator */}
-          <motion.div 
-            variants={itemVariants}
-            className="flex flex-col items-center"
-          >
-            <p className="text-gray-400 text-sm mb-4">Scroll to explore</p>
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              <ChevronDown className="w-6 h-6 text-gray-400" />
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Bottom gradient overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent" />
     </section>
   );
 };
