@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { Code } from "lucide-react";
 import Image from "next/image";
 
 const Banner: React.FC = () => {
@@ -37,8 +36,8 @@ const Banner: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen">
-      <div className="absolute left-[calc(50%-11rem)] mt-16 h-[30rem] w-[22rem] overflow-hidden rounded-t-full pt-6 bg-gradient-to-b from-[var(--color-primary)] to-transparent">
+    <section>
+      <div className="left-[calc(50%-11rem)] mt-16 h-[30rem] w-[22rem] overflow-hidden rounded-t-full pt-6 bg-gradient-to-b from-[var(--color-primary)] to-transparent">
         <Image
           src="https://z-p3-scontent.fdac12-1.fna.fbcdn.net/v/t39.30808-6/480445048_1923715631492143_3577327119025195517_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=n9wSBijAL_kQ7kNvwFRz3EB&_nc_oc=AdmmnZh7sJZ1yPaKBzIvsJGTeljd1RYyjMeXC8-JeNACuaJtJLMAXnl0vXITVqSDZrs&_nc_zt=23&_nc_ht=z-p3-scontent.fdac12-1.fna&_nc_gid=hlKZ1xLTnT8tWblUoiXHEw&oh=00_AfZTCbEvQrGyP39b_s7jexmUOTmbewH8yPJ6osY0ICEycA&oe=68DEB01A"
           alt="my-photo"
@@ -48,7 +47,7 @@ const Banner: React.FC = () => {
       </div>
 
       {/* Animated background elements */}
-      <div className="absolute inset-0">
+      <div>
         <motion.div
           className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"
           animate={{
@@ -131,23 +130,6 @@ const Banner: React.FC = () => {
                 {skill}
               </motion.span>
             ))}
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
-          >
-            <motion.button
-              className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold text-lg shadow-2xl hover:shadow-purple-500/25 transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="flex items-center gap-2">
-                View My Work
-                <Code className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-              </span>
-            </motion.button>
           </motion.div>
         </motion.div>
       </div>
